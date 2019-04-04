@@ -1,1 +1,68 @@
-你好，关一文！
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>login</title>
+    <link rel="icon" href="//www.jd.com/favicon.ico" type="image/x-icon">
+
+    <meta name="author" content="dreameng">
+    <!-- Bootstrap -->
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+
+    <!--<script src="{{ url_for('static', filename='login.js') }}"></script>-->
+
+</head>
+
+<body>
+<div class="col-md-6 col-md-offset-3" style="padding: 200px 0px 0px">
+    <img src="http://misc.360buyimg.com/lib/img/e/logo-201305-b.png" class="center-block">
+    <div class="col-md-6 col-md-offset-3" style="padding:30px 0px 0px">
+        <form class="bs-example bs-example-form" role="form" action="/login" method="post">
+            <div class="input-group">
+                <span class="input-group-addon" ><b>用户名</b></span>
+                <input type="text" class="form-control" name="acct" placeholder="账号">
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon"><b>密码</b></span>
+                <input type="password" class="form-control" name="pwd" placeholder="密码">
+            </div>
+            <br>
+            <div class="text-muted text-right" style="padding:0px 0px 5px" id="fgt_pwd">忘记密码</div>
+            <button type="submit" class="btn-danger btn-block btn" id="login-btn">登录</button>
+        </form>
+    </div>
+</div>
+</body>
+<script>
+    var btn = document.getElementById('login-btn');
+    btn.onclick=function(){
+        var acct = $("input[name=acct]").val();
+        var pwd = $("input[name=pwd]").val();
+        if(acct == '') {
+            alert('账号不能为空');
+            return false;
+        }
+        if(pwd == '') {
+            alert('密码不能为空');
+            return false;
+        }
+    };
+    var f_btn = document.getElementById('fgt_pwd');
+    f_btn.onclick=function(){
+        alert('请联系yuyong(erp)找回密码');
+    };
+</script>
+</html>
